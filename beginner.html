@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Workshop - Beginner Pathway</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        nav {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+        .task {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+        }
+        .hints {
+            background-color: #f9f9f9;
+            border: 1px dashed #bdc3c7;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Applied AI Training Workshop</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Overview</a>
+            <a href="novice.html">Novice (A)</a>
+            <a href="beginner.html" class="active">Beginner (B)</a>
+            <a href="advanced.html">Advanced (C/D)</a>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Beginner (B) Pathway: Task &amp; Hint Sheet</h2>
+                <p><strong>Welcome!</strong> You are in the Beginner pathway because you have already experimented with AI. This session is about moving from simple experiments to achieving <strong>reliable, repeatable academic results</strong>.</p>
+                <p>Your goal is to complete the <strong>four core tasks</strong> below. For each task, try to solve the <strong>Problem</strong> on your own first. If you get stuck or want to see a more efficient way, consult the <strong>Hints &amp; Prompts</strong>.</p>
+                
+                <hr>
+
+                <div class="task">
+                    <h3>Important First Step: Accessing the Tools</h3>
+                    <p>Before you begin, please add the custom agents to your Copilot.</p>
+                    <ol>
+                        <li><strong>Log in to Microsoft 365</strong> with your university account.</li>
+                        <li>Go to the main Copilot interface (e.g., <code>copilot.microsoft.com</code> or the Copilot app in Teams).
+                            <br><strong>Note:</strong> These custom agents may <em>not</em> be available in the small Copilot window inside Outlook or Word. You must use the main chat interface.</li>
+                        <li>Click each link below to add the agent to your Copilot:
+                            <ul>
+                                <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_ef40e31a-faa0-5e5c-2f90-a22c14d9ed13&source=embedded-builder" target="_blank" rel="noopener noreferrer"><strong>Add: Academic Rigour Assistant</strong></a></li>
+                                <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_29420ced-78cb-75c9-d668-92906ac92f64&source=embedded-builder" target="_blank" rel="noopener noreferrer"><strong>Add: Socratic Tutor</strong></a></li>
+                                <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_0d907d8e-7969-f76d-f5be-339ec5474aac&source=embedded-builder" target="_blank" rel="noopener noreferrer"><strong>Add: Academic Feedback Assistant</strong></a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task">
+                    <h3>Task 1: Image Generation & Critical Evaluation</h3>
+                    <p><strong>Objective:</strong> To create a specific image for your course and critically evaluate its hidden biases.</p>
+                    <p><strong>Problem:</strong>
+                    Go to the standard Microsoft Copilot. Generate an image relevant to your discipline (e.g., "a business meeting," "a crime scene investigation," "a youth worker counselling a client"). Look at the first result. Now, iterate on your prompt to generate a <em>new</em> image that is more inclusive, specific, and professionally appropriate for the UK context.</p>
+                    
+                    <div class="hints">
+                        <h4>Hints &amp; Prompts (If you get stuck):</h4>
+                        <ul>
+                            <li><strong>Initial Prompt:</strong> Try a simple prompt like:
+                                <br><code>Create a photorealistic image of a "team of business managers."</code></li>
+                            <li><strong>Critical Hint:</strong> Look at the images. Who is represented (age, gender, ethnicity)? Who is missing? Does the setting look like a UK office? AI learns from existing data, which is full of stereotypes.</li>
+                            <li><strong>Refinement Prompt:</strong> To get better results, you must be more specific. Try adding details:
+                                <br><code>Create a photorealistic image of a diverse business team, including men and women of various ethnicities, in a modern UK office. One person is presenting at a whiteboard.</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <h3>Task 2: Source-Grounded Summary & Audio</h3>
+                    <p><strong>Objective:</strong> To use NotebookLM to summarise <em>your own</em> documents and create an audio version.</p>
+                    <p><strong>Problem:</strong>
+                    Go to NotebookLM (<code>notebooklm.google.com</code>). Create a new notebook and upload a document you use for teaching (e.g., lecture notes, a key reading). Ask NotebookLM to create a 5-bullet summary and then a 2-minute audio "podcast" of that summary.</p>
+                    
+                    <div class="hints">
+                        <h4>Hints &amp; Prompts (If you get stuck):</h4>
+                        <ul>
+                            <li><strong>Hint 1:</strong> You will need a free Google account to use NotebookLM.</li>
+                            <li><strong>Hint 2:</strong> Click <strong>"+ New notebook"</strong> and then <strong>"+ Add Source"</strong> to upload your PDF, .txt, or copied text.</li>
+                            <li><strong>Hint 3:</strong> After it is uploaded, use the chat box at the bottom. Try this prompt:
+                                <br><code>Based only on the source, generate a 5-bullet summary of the key arguments.</code></li>
+                            <li><strong>Hint 4 (The "Magic"):</strong> Click on the <code>[1]</code> citations in the summary to see where the information came from in <em>your</em> document. This is why it is "source-grounded" and does not "hallucinate" (make things up).</li>
+                            <li><strong>Hint 5 (Audio):</strong> Now, try this prompt:
+                                <br><code>Create a short audio briefing, like a podcast introduction, of this summary.</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <h3>Task 3: Using a Custom Agent (Academic Feedback)</h3>
+                    <p><strong>Objective:</strong> To use the <strong>Academic Feedback Assistant</strong> to save time and add structure to your marking.</p>
+                    <p><strong>Problem:</strong>
+                    Open the <strong>Academic Feedback Assistant</strong> agent (that you added via the link). Below is a set of messy, raw marker notes. Your task is to copy these notes into the agent and provide the <em>other required information</em> to generate the final, student-facing feedback.</p>
+                    <blockquote>
+                        <strong>Raw Notes:</strong> <code>student understands the topic ok. but the argument is weak. needed to use more of the core reading list texts. intro and conclusion are fine but the middle section is all over the place. referencing is not in the right style. 55%</code>
+                    </blockquote>
+
+                    <div class="hints">
+                        <h4>Hints &amp; Prompts (If you get stuck):</h4>
+                        <ul>
+                            <li><strong>Hint 1:</strong> This agent is a <em>strict</em> tool, as defined by its system prompt. It <em>will not work</em> unless you give it all the required inputs (Mark, Type, Notes, Email, Office).</li>
+                            <li><strong>Hint 2 (The "Recipe"):</strong> Copy and paste the <em>entire block</em> below into the agent, customising your email and office:
+<pre><code>Final Mark: 55%
+Assignment Type: 2000-word critical essay
+Raw Marker Notes: student understands the topic ok. but the argument is weak. needed to use more of the core reading list texts. intro and conclusion are fine but the middle section is all over the place. referencing is not in the right style.
+Marker Email: j.smith@newman.ac.uk
+Marker Office Location: ED-204
+</code></pre>
+                            </li>
+                            <li><strong>Key Takeaway:</strong> This tool is not "magic"; it is a processor. It takes your expert-but-messy judgements and formats them, saving you administrative time.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <h3>Task 4 (Extension): Try the Other Agents</h3>
+                    <p><strong>Objective:</strong> To understand the different purposes of the other two agents.</p>
+                    <p><strong>Problem:</strong>
+                    If you have finished, try one or both of these:</p>
+                    <ol>
+                        <li><strong>Academic Rigour:</strong> Open the <strong>Academic Rigour Assistant</strong>. Ask it a complex question from your discipline. Then, ask it to explain the evidence for its claim.</li>
+                        <li><strong>Socratic Tutor:</strong> Open the <strong>Socratic Tutor</strong>. Pretend to be a first-year student who is confused about a core concept.</li>
+                    </ol>
+
+                    <div class="hints">
+                        <h4>Hints &amp; Prompts (If you get stuck):</h4>
+                        <ul>
+                            <li><strong>Rigour Hint:</strong> Try asking the <strong>Academic Rigour Assistant</strong>:
+                                <br><code>What is the evidence for labelling theory in criminology?</code>
+                                <br><em>Then follow up with:</em> <code>What are the limitations of that evidence?</code>
+                                <br>(Notice its cautious, structured, evidence-first response).</li>
+                            <li><strong>Socratic Hint:</strong> Try asking the <strong>Socratic Tutor</strong>:
+                                <br><code>I do not understand the difference between 'actus reus' and 'mens rea' in criminal law.</code>
+                                <br><em>Or</em>
+                                <br><code>What does 'limited liability' mean in business?</code>
+                                <br>(Notice how it <em>answers your question with another question</em> to make you think).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <h3>Final Reflection</h3>
+                <p>Take 2 minutes to think: Based on these tasks, what is one piece of advice you would give a student about using AI responsibly in your discipline?</p>
+                
+            </article>
+        </main>
+
+        <footer>
+            <p>Workshop Materials | Birmingham Newman University</p>
+        </footer>
+    </div>
+
+</body>
+</html>
