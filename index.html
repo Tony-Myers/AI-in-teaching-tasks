@@ -1,114 +1,550 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Applied AI Workshop – Overview (Clean Light)</title>
-<meta name="color-scheme" content="light">
-<meta name="description" content="Applied AI in Higher Education workshop materials">
-<style>
-/* CLEAN, HIGH-CONTRAST LIGHT THEME (WCAG 2.2 AA/AAA where feasible)
-   - No gradients, no translucency, no dark backgrounds
-   - Large base type (20px), wide line-height
-   - Underlined links, obvious focus states
-   - Clear visual hierarchy, extra spacing
-*/
-:root{
-  --bg:#ffffff;            /* White background */
-  --text:#111111;          /* Near-black text */
-  --muted:#333333;         /* Dark grey for subtext */
-  --panel:#ffffff;
-  --card:#ffffff;
-  --border:#1f2937;        /* Dark border for strong separation */
-  --brand:#0b57d0;         /* Accessible blue */
-  --accent:#b91c1c;        /* Warning red */
-  --radius:10px;
-  --shadow:none;           /* Avoid fuzzy contrast */
-  --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --sans: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
-  --base-font:20px;        /* Larger base */
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:var(--base-font);line-height:1.8}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Workshop - Overview</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --light-bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --text-primary: #333;
+            --text-secondary: #7f8c8d;
+        }
 
-/* Links are always underlined */
-a{color:var(--brand);text-decoration:underline;text-underline-offset:2px}
-a:hover{text-decoration-thickness:3px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Strong, visible focus */
-:focus-visible{outline:4px solid #f59e0b;outline-offset:2px}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-primary);
+        }
 
-/* Header */
-.header{border-bottom:3px solid var(--border);background:var(--panel)}
-.header-inner{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between}
-.brand{font-weight:800;font-size:22px}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.nav a{display:inline-block;padding:8px 12px;border:2px solid transparent;border-radius:8px}
-.nav a[aria-current="page"]{border-color:var(--border)}
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
 
-/* Layout */
-.container{max-width:1200px;margin:0 auto;padding:24px 20px}
-.hero{padding:24px 0 0}
-.hero h1{font-size:clamp(30px,4vw,46px);margin:0 0 8px}
-.subtitle{color:var(--muted);max-width:80ch;margin:0}
-.section{margin:28px 0}
-.lead{color:var(--muted)}
+        .skip-link:focus {
+            top: 0;
+        }
 
-/* Cards: simple borders for separation */
-.grid{display:grid;gap:18px}
-.cards{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.card{background:var(--card);border:3px solid var(--border);border-radius:var(--radius);padding:16px}
-.card h3{margin-top:6px}
-.badge{display:inline-block;font-size:14px;padding:2px 8px;border-radius:999px;border:2px solid var(--border);color:var(--muted)}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-/* Timeline with solid lines and large type */
-.timeline{position:relative;margin:16px 0;padding-left:28px}
-.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:4px;background:var(--border)}
-.tl-item{position:relative;margin:0 0 20px}
-.tl-item::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--border)}
-.tl-time{font-weight:800}
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            margin: -20px -20px 30px -20px;
+            text-align: center;
+        }
 
-/* Buttons (links styled as buttons) */
-.btn{display:inline-block;padding:12px 16px;border-radius:10px;border:3px solid var(--border);text-decoration:none;color:var(--text)}
-.btn:hover{background:#f3f4f6}
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
 
-/* Print */
-@media print{
-  a{text-decoration:none}
-}
-</style>
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        nav a {
+            flex: 1 1 200px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            border-radius: 6px;
+            border: 2px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        nav a.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        main {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin: 30px 0 20px 0;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3::before {
+            content: '▸';
+            color: var(--secondary-color);
+            font-size: 1.2em;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .info-box h3::before {
+            color: white;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .outcome-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .outcome-card:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .outcome-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .outcome-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pathway-card {
+            background: var(--card-bg);
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pathway-card.novice {
+            border-color: #27ae60;
+        }
+
+        .pathway-card.beginner {
+            border-color: #3498db;
+        }
+
+        .pathway-card.advanced {
+            border-color: #e74c3c;
+        }
+
+        .pathway-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+        }
+
+        .pathway-card .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .pathway-card.novice .badge {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .pathway-card.beginner .badge {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .pathway-card.advanced .badge {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .pathway-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .pathway-card .duration {
+            background-color: var(--light-bg);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            color: var(--text-secondary);
+        }
+
+        .pathway-card .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pathway-card .btn:hover {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .checklist {
+            background-color: #f0f8ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .checklist h3 {
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            background-color: #fffef0;
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .timeline h3 {
+            margin-top: 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            align-items: flex-start;
+        }
+
+        .timeline-item .time {
+            min-width: 80px;
+            font-weight: 700;
+            color: var(--warning-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            nav, .skip-link {
+                display: none;
+            }
+
+            main {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                margin: -10px -10px 20px -10px;
+                padding: 1.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                width: 100%;
+            }
+
+            .outcomes-grid,
+            .pathway-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
-<header class="header" role="banner">
-  <div class="header-inner">
-    <div class="brand">Applied AI Workshop</div>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Overview</a>
-      <a href="novice.html">Novice</a>
-      <a href="beginner.html">Beginner</a>
-      <a href="advanced.html">Advanced</a>
-    </nav>
-  </div>
-</header>
-<main class="container" id="main-content" role="main">
-  <section class="hero">
-    <h1>Applied AI in Higher Education</h1>
-    <p class="subtitle">A practical, multi-pathway workshop for academics across disciplines. Hands-on tasks, critical reflection, and ready-to-use artefacts for teaching.</p>
-  </section>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <section class="section" aria-labelledby="outcomes-h2">
-    <h2 id="outcomes-h2">Outcomes</h2>
-    <div class="grid cards" role="list">
-      <article class="card" role="listitem" aria-labelledby="o1"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o1">Image generation & bias</h3><p>Create and critically evaluate images for teaching materials, identifying stereotypes and contextual mismatches.</p></article>
-      <article class="card" role="listitem" aria-labelledby="o2"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o2">Source-grounded AI</h3><p>Use NotebookLM to summarise and create audio from your own documents, with verifiable citations.</p></article>
-      <article class="card" role="listitem" aria-labelledby="o3"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o3">Custom agents</h3><p>Work with specialist Copilot agents (Rigour, Socratic, Feedback) and critique their behaviour.</p></article>
-      <article class="card" role="listitem" aria-labelledby="o4"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o4">Student support</h3><p>Draft guidance and assessment-aligned activities that promote responsible, effective student use.</p></article>
+    <div class="container">
+        <header>
+            <h1>Applied AI Training Workshop</h1>
+            <p class="subtitle">A Practical Workshop for Higher Education Staff</p>
+        </header>
+
+        <nav aria-label="Workshop pathways navigation">
+            <a href="index.html" class="active" aria-current="page">Overview</a>
+            <a href="novice.html">Novice (A)</a>
+            <a href="beginner.html">Beginner (B)</a>
+            <a href="advanced.html">Intermediate/Advanced (C/D)</a>
+        </nav>
+
+        <main id="main-content">
+            <article>
+                <div class="info-box">
+                    <h3>Welcome</h3>
+                    <p>This hands-on workshop builds on the 30-minute presentation you have just seen. You will gain practical skills with AI tools and critically evaluate them from the perspective of your specific discipline. The workshop uses a differentiated pathway approach to ensure everyone is appropriately challenged and supported.</p>
+                </div>
+
+                <h2>Session Outcomes</h2>
+                <p>By the end of this 2.5-hour workshop, all staff will have hands-on experience with:</p>
+
+                <div class="outcomes-grid">
+                    <div class="outcome-card">
+                        <div class="icon">🎨</div>
+                        <h4>Image Generation & Bias</h4>
+                        <p>Create images using Microsoft Copilot and critically evaluate them for professional and ethical biases relevant to your field.</p>
+                    </div>
+
+                    <div class="outcome-card">
+                        <div class="icon">📚</div>
+                        <h4>Source-Grounded AI</h4>
+                        <p>Use NotebookLM to summarise academic texts and create audio resources with verifiable citations.</p>
+                    </div>
+
+                    <div class="outcome-card">
+                        <div class="icon">🤖</div>
+                        <h4>Custom AI Agents</h4>
+                        <p>Work with specialist Copilot agents designed for academic tasks and understand their limitations.</p>
+                    </div>
+
+                    <div class="outcome-card">
+                        <div class="icon">🎓</div>
+                        <h4>Student Support</h4>
+                        <p>Develop guidance for helping students use these tools responsibly and effectively.</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>What You Will Need</h3>
+                    <ul>
+                        <li>University Microsoft 365 account (logged in)</li>
+                        <li>Google account (free, for NotebookLM)</li>
+                        <li>A sample document from your teaching (PDF or text file)</li>
+                        <li>Sample assignment feedback or marking notes (anonymised)</li>
+                        <li>An open mind and willingness to experiment</li>
+                    </ul>
+                </div>
+
+                <h2>Suggested Workshop Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">0:00-0:10</span>
+                        <div>
+                            <strong>Introduction and Pathway Selection</strong>
+                            <p>Complete the self-assessment and choose your pathway.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">0:10-1:45</span>
+                        <div>
+                            <strong>Core Tasks (Differentiated by Pathway)</strong>
+                            <p>Complete your pathway's structured activities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">1:45-2:00</span>
+                        <div>
+                            <strong>Break</strong>
+                            <p>Refresh and reflect on what you have learned.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">2:00-2:20</span>
+                        <div>
+                            <strong>Group Discussion</strong>
+                            <p>Share insights, challenges, and discipline-specific concerns.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">2:20-2:30</span>
+                        <div>
+                            <strong>Action Planning</strong>
+                            <p>Identify one concrete action to take back to your programme team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Choose Your Pathway</h2>
+                <p>Select the pathway that best matches your current experience with generative AI tools. You can switch pathways during the session if needed.</p>
+
+                <div class="pathway-grid">
+                    <div class="pathway-card novice">
+                        <span class="badge">A</span>
+                        <h4>Novice Pathway</h4>
+                        <p>You have little or no experience with AI tools. This pathway provides detailed, step-by-step guidance through each task.</p>
+                        <div class="duration">⏱️ Estimated time: 90-100 minutes</div>
+                        <a href="novice.html" class="btn">Start Novice Pathway</a>
+                    </div>
+
+                    <div class="pathway-card beginner">
+                        <span class="badge">B</span>
+                        <h4>Beginner Pathway</h4>
+                        <p>You have experimented with AI before. This pathway presents problems first, with hints available if needed.</p>
+                        <div class="duration">⏱️ Estimated time: 80-90 minutes</div>
+                        <a href="beginner.html" class="btn">Start Beginner Pathway</a>
+                    </div>
+
+                    <div class="pathway-card advanced">
+                        <span class="badge">C/D</span>
+                        <h4>Intermediate/Advanced</h4>
+                        <p>You have substantial experience with AI. Quickly review core competencies, then engage in advanced critique and design challenges.</p>
+                        <div class="duration">⏱️ Estimated time: 90-110 minutes</div>
+                        <a href="advanced.html" class="btn">Start Advanced Pathway</a>
+                    </div>
+                </div>
+
+                <h2>Workshop Philosophy</h2>
+                <h3>Differentiation, Not Separation</h3>
+                <p>All pathways cover the same core skills but approach them differently. This ensures everyone leaves with a common baseline whilst respecting your time and expertise.</p>
+
+                <h3>Discipline-Agnostic Design</h3>
+                <p>Tasks are deliberately general. You are encouraged to adapt examples and scenarios to your specific field (Law, Business, Criminology, Youth Work, Policing, etc.).</p>
+
+                <h3>Critical Engagement</h3>
+                <p>This is not a "pro-AI" workshop. You will actively test these tools for accuracy, bias, and ethical robustness. The goal is informed, critical adoption—not uncritical enthusiasm.</p>
+
+                <h3>Safe to Experiment</h3>
+                <p>There are no wrong questions. This is a space to try things, break things, and learn from both successes and failures. Facilitators are here to help at any point.</p>
+
+            </article>
+        </main>
+
+        <footer>
+            <p><strong>Workshop Materials</strong> | Birmingham Newman University</p>
+            <p>Last updated: November 2025</p>
+        </footer>
     </div>
-  </section>
 
-  <section class="section" aria-labelledby="agenda-h2">
-    <h2 id="agenda-h2">Agenda (2 hours 30 minutes)</h2>
-    <p class="lead">Assumes participants have seen a 30-minute pre-talk showcasing a module where students used AI and recorded their use.</p>
-    <div class="timeline" aria-l
+</body>
+</html>
