@@ -1,129 +1,28 @@
+<!-- Combined HTML for index.html (overview) with shared CSS/JS. You can duplicate this file and replace the <main> block for novice, beginner, and advanced versions. -->
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied AI Workshop - Overview</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        header {
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        header h1 {
-            color: #2c3e50;
-            margin: 0;
-        }
-        nav {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        nav a {
-            display: inline-block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #2980b9;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            background-color: #bdc3c7;
-            color: #2c3e50;
-        }
-        nav a.active {
-            background-color: #3498db;
-            color: #ffffff;
-        }
-        h2, h3, h4 {
-            color: #2c3e50;
-        }
-        h2 {
-            border-bottom: 1px solid #ecf0f1;
-            padding-bottom: 5px;
-        }
-        ul, ol {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applied AI Workshop – Overview</title>
+<style>
+/* Base styles (shared across all pages) */
+:root{--bg:#0b0f14;--panel:#0f1720;--card:#111a26;--muted:#8aa0b2;--text:#e6eef5;--brand:#3aa7ff;--brand-2:#6ee7b7;--accent:#ffd166;--danger:#ff6b6b;--radius:16px;--shadow:0 8px 24px rgba(0,0,0,.25);--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--panel:#ffffff;--card:#ffffff;--muted:#556575;--text:#0c1723;--brand:#1e88e5;--brand-2:#0ea5e9;--accent:#b7791f;--danger:#c53030;--shadow:0 8px 24px rgba(0,0,0,.08)}}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:linear-gradient(180deg,var(--bg),#06090d);color:var(--text);font-family:var(--sans);line-height:1.6}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1100px;margin:0 auto;padding:24px}
+.header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(160%) blur(6px);background:linear-gradient(180deg,rgba(20,27,36,.9),rgba(20,27,36,.6));border-bottom:1px solid rgba(255,255,255,.06)}.header-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 24px}.brand{display:flex;gap:12px;align-items:center;font-weight:700}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}.nav a[aria-current="page"]{background:rgba(58,167,255,.15);border-color:rgba(58,167,255,.35)}
+.hero{padding:48px 0 8px}h1{font-size:clamp(26px,4vw,40px)}.subtitle{color:var(--muted);max-width:70ch;margin-bottom:24px}.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.card{background:linear-gradient(180deg,var(--card),#0c131c);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}.badge{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+.section{margin:28px 0}.lead{color:var(--muted)}.timeline{position:relative;margin:16px 0;padding-left:24px}.timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.14)}.tl-item{position:relative;margin-bottom:14px}.tl-item:before{content:"";position:absolute;left:-2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(58,167,255,.25)}.tl-time{font-weight:700}.callout{border-left:4px solid var(--brand);background:linear-gradient(90deg,rgba(58,167,255,.18),transparent);padding:12px 14px;border-radius:10px;margin:12px 0}.footer{color:var(--muted);padding:32px 24px;border-top:1px solid rgba(255,255,255,.06)}
+</style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>Applied AI Training Workshop</h1>
-        </header>
-
-        <nav>
-            <a href="index.html" class="active">Overview</a>
-            <a href="novice.html">Novice (A)</a>
-            <a href="beginner.html">Beginner (B)</a>
-            <a href="advanced.html">Intermediate/Advanced (C/D)</a>
-        </nav>
-
-        <main>
-            <article>
-                <h2>Applied AI in Higher Education: A Practical Workshop</h2>
-                
-                <h3>Welcome</h3>
-                <p>Welcome to this hands-on workshop on using Applied AI to support your teaching and learning. The tools available to us are evolving rapidly, and our goal today is to provide a structured, supportive environment for you to gain practical skills and critically evaluate these technologies from the perspective of your specific disciplines.</p>
-
-                <h3>Session Goal: A Core Set of Skills for All</h3>
-                <p>Our objective is not to make everyone an AI expert, but to ensure all staff leave with a common baseline of skills. By the end of this session, you will have had hands-on experience with:</p>
-                <ol>
-                    <li><strong>Image Generation &amp; Bias:</strong> Using Microsoft Copilot to generate images and, crucially, evaluating them for the professional and ethical biases relevant to your field.</li>
-                    <li><strong>Source-Grounded AI:</strong> Using NotebookLM to summarise academic texts and create audio resources, understanding <em>why</em> it is safer than general AI for academic work.</li>
-                    <li><strong>Custom AI Agents:</strong> Using the specialist Copilot agents we have designed, such as the <strong>Academic Feedback Assistant</strong>, to support your specific academic tasks.</li>
-                    <li><strong>Student Support:</strong> Reflecting on how to guide students towards responsible and effective use of these tools.</li>
-                </ol>
-
-                <h3>A Pathway for Everyone</h3>
-                <p>We recognise that colleagues are joining with diverse levels of experience. To make this session effective, we will <em>not</em> be using a one-size-fits-all approach.</p>
-                <ol>
-                    <li><strong>Diagnostic Poll:</strong> You will be able to identify your current comfort level with generative AI (Novice, Beginner, Intermediate, or Advanced).</li>
-                    <li><strong>Differentiated Pathways:</strong> Based on your answer, you will follow a specific pathway but can change during the session if you feel that would be beneficial:
-                        <ul>
-                            <li><strong>Novices</strong> will use a detailed, step-by-step guided worksheet.</li>
-                            <li><strong>Beginners</strong> will use a "problem and hint" method to support them.</li>
-                            <li><strong>Intermediate/Advanced</strong> staff will quickly review the core tasks before moving to high-level challenges focused on critique and design for their disciplines.</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>This model ensures that everyone is appropriately challenged and supported. Please ask questions at any time; this session is for experimentation and learning.</p>
-            </article>
-        </main>
-
-        <footer>
-            <p>Workshop Materials | Birmingham Newman University</p>
-        </footer>
-    </div>
-
+<header class="header"><div class="header-inner"><div class="brand">Applied AI Workshop</div><nav class="nav"><a href="index.html" aria-current="page">Overview</a><a href="novice.html">Novice</a><a href="beginner.html">Beginner</a><a href="advanced.html">Advanced</a></nav></div></header>
+<main class="container">
+<section class="hero"><h1>Applied AI in Higher Education</h1><p class="subtitle">A practical, multi-pathway workshop for academics across disciplines. Hands-on tasks, critical reflection, and ready-to-use artefacts for teaching.</p>
+<div class="grid cards"><div class="card"><span class="badge">Outcome</span><h3>Image generation & bias</h3><p>Create and critically evaluate images for teaching materials, identifying stereotypes and contextual mismatches.</p></div><div class="card"><span class="badge">Outcome</span><h3>Source-grounded AI</h3><p>Use NotebookLM to summarise and create audio from your own documents, with verifiable citations.</p></div><div class="card"><span class="badge">Outcome</span><h3>Custom agents</h3><p>Work with specialist Copilot agents (Rigour, Socratic, Feedback) and critique their behaviour.</p></div><div class="card"><span class="badge">Outcome</span><h3>Student support</h3><p>Draft guidance and assessment-aligned activities that promote responsible, effective student use.</p></div></div></section>
+<section class="section"><h2>Agenda (2 hours 30 minutes)</h2><p class="lead">Assumes participants have seen a 30-minute pre-talk showcasing a module where students used AI and recorded their use.</p><div class="timeline"><div class="tl-item"><div class="tl-time">00:00–00:10</div><div class="tl-title"><strong>Welcome & diagnostic poll</strong></div></div><div class="tl-item"><div class="tl-time">00:10–00:25</div><div class="tl-title"><strong>Link to prior module</strong></div></div><div class="tl-item"><div class="tl-time">00:25–00:55</div><div class="tl-title"><strong>Activity 1:</strong> Image generation & bias</div></div><div class="tl-item"><div class="tl-time">00:55–01:00</div><div class="tl-title">Break</div></div><div class="tl-item"><div class="tl-time">01:00–01:40</div><div class="tl-title"><strong>Activity 2:</strong> Source-grounded AI</div></div><div class="tl-item"><div class="tl-time">01:40–02:05</div><div class="tl-title"><strong>Activity 3:</strong> Custom agents</div></div><div class="tl-item"><div class="tl-time">02:05–02:25</div><div class="tl-title"><strong>Activity 4:</strong> Student support artefact</div></div><div class="tl-item"><div class="tl-time">02:25–02:30</div><div class="tl-title">Plenary & next steps</div></div></div><div class="callout">You can switch pathways at any time. Facilitators will support transitions.</div></section>
+</main>
+<footer class="footer">Workshop Materials · Built for a mixed-discipline HE audience · CC-BY</footer>
 </body>
 </html>
