@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Workshop - Novice Pathway</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        nav {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+            color: #555;
+        }
+        .task {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Applied AI Training Workshop</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Overview</a>
+            <a href="novice.html" class="active">Novice (A)</a>
+            <a href="beginner.html">Beginner (B)</a>
+            <a href="advanced.html">Advanced (C/D)</a>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Novice (A) Pathway: Guided Practice Worksheet</h2>
+                <p><strong>Welcome!</strong> This worksheet is your guide for today's session. It is designed to walk you through the core AI tasks step-by-step. There are no "silly questions"—the goal is to experiment in a safe environment and build your confidence with these new tools.</p>
+                <p>Please ask a facilitator for help at any point.</p>
+
+                <hr>
+
+                <div class="task">
+                    <h3>Important First Step: Accessing the Tools</h3>
+                    <p>To use the special "agents," you must first add them to your Copilot.</p>
+                    <ol>
+                        <li>Ensure you are logged into your University Microsoft 365 account.</li>
+                        <li>Go to the main Copilot interface (e.g., <code>copilot.microsoft.com</code> or the Copilot app in Teams). <strong>Note:</strong> These agents may not appear in the small pop-ups in Word or Outlook.</li>
+                        <li>Click this link to add our first agent:
+                            <ul>
+                                <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_0d907d8e-7969-f76d-f5be-339ec5474aac&source=embedded-builder" target="_blank" rel="noopener noreferrer"><strong>Click to Add: Academic Feedback Assistant</strong></a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task">
+                    <h3>Task 1: Creating Images & Spotting Bias</h3>
+                    <p><strong>Objective:</strong> To use AI to generate an image (e.g., for a lecture slide) and to think critically about its output.</p>
+                    <p><strong>Tool:</strong> Microsoft Copilot (Standard version)</p>
+                    
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Open Microsoft Copilot. Make sure no special agents are selected (it should just say "Copilot").</li>
+                        <li>In the chat box, type a prompt relevant to your field:
+                            <blockquote><code>Create a photorealistic image of a "lawyer in a courtroom."</code><br><em>Or</em><br><code>Create a photorealistic image of a "police officer."</code></blockquote>
+                        </li>
+                        <li>Copilot will generate 4 images. Look at them closely.
+                            <ul>
+                                <li><em>What do you notice?</em> (e.g., What is the typical gender or ethnicity? What is the power dynamic in the image? Does it look like a UK courtroom or officer?)</li>
+                            </ul>
+                        </li>
+                        <li>Now, let's try a more specific prompt to correct this. Type:
+                            <blockquote><code>Create a photorealistic image of a female BAME police officer in UK uniform, speaking calmly with a member of the public.</code></blockquote>
+                        </li>
+                    </ol>
+
+                    <h4>Reflection (Just for you to think about):</h4>
+                    <p>The first prompt likely showed bias (e.g., a white male) because AI is trained on internet data, which contains stereotypes. For professional fields like Law and Policing, these stereotypes can be harmful. We must be very <strong>specific</strong> and <strong>critical</strong> in our prompts.</p>
+                </div>
+
+                <div class="task">
+                    <h3>Task 2: Summarising Texts & Creating Audio with NotebookLM</h3>
+                    <p><strong>Objective:</strong> To use a "source-grounded" AI to safely summarise your <em>own</em> documents.</p>
+                    <p><strong>Tool:</strong> NotebookLM (a free Google tool)</p>
+
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>In your browser, go to <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">notebooklm.google.com</a>.</li>
+                        <li>Click the "<strong>+ New notebook</strong>" button.</li>
+                        <li>On the left, find the "Sources" box. Click the "<strong>+ Add Source</strong>" button.</li>
+                        <li>Select "Upload file" and upload a PDF or text file. (Your facilitator can provide a sample file, or you can use one of your own).</li>
+                        <li>Once uploaded, click on the document's name. The document will open.</li>
+                        <li>At the bottom of the page is a chat box. Type this prompt:
+                            <blockquote><code>Generate a 5-point summary of this source.</code></blockquote>
+                        </li>
+                        <li>Read the summary. You will see small numbers, like <code>[1]</code>. Click one. Notice how it shows you <em>exactly</em> where in your document the information came from. This is "source-grounded" and prevents the AI from "making things up" (hallucinating).</li>
+                        <li>Now, type a new prompt in the same chat box:
+                            <blockquote><code>Create a 2-minute audio overview of this source, suitable for a student's revision.</code></blockquote>
+                        </li>
+                        <li>Press the <strong>Play</strong> button to listen.</li>
+                    </ol>
+
+                    <h4>Reflection:</h4>
+                    <p>NotebookLM <em>only</em> uses the documents you give it. This makes it a much safer tool for summarising your lecture notes or assigned readings for students.</p>
+                </div>
+
+                <div class="task">
+                    <h3>Task 3: Using the Academic Feedback Assistant</h3>
+                    <p><strong>Objective:</strong> To use a "custom" agent that is pre-programmed to format your marking feedback.</p>
+                    <p><strong>Tool:</strong> <strong>Academic Feedback Assistant</strong> (which you added in the first step)</p>
+
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Go back to your main Copilot window.</li>
+                        <li>Select the <strong>Academic Feedback Assistant</strong> from your list of Copilot agents.</li>
+                        <li>This agent is very strict. It <em>needs</em> several pieces of information to work.</li>
+                        <li>Copy the <em>entire block of text</em> below:
+<pre><code>Final Mark: 55%
+Assignment Type: 2000-word critical essay
+Raw Marker Notes: student understands the topic ok. but the argument is weak. needed to use more of the core reading list texts. intro and conclusion are fine but the middle section is all over the place. referencing is not in the right style.
+Marker Email: j.smith@newman.ac.uk
+Marker Office Location: ED-204
+</code></pre>
+                        </li>
+                        <li>Paste this entire block into the chat box and press Send.</li>
+                        <li>Observe the output.</li>
+                    </ol>
+
+                    <h4>Reflection:</h4>
+                    <p>Notice how the agent (which is just Copilot with expert instructions) transformed the messy notes into structured, professional student feedback, complete with the correct institutional links. This can save you time and ensure consistency.</p>
+                </div>
+
+                <div class="task">
+                    <h3>Task 4: Final Reflection (Student Support)</h3>
+                    <p><strong>Objective:</strong> To think about how you will support your students.</p>
+                    <p><strong>Tool:</strong> A pen and paper, or a new Word document.</p>
+                    <p>Please write down your answers to these two questions:</p>
+                    <ol>
+                        <li>Based on what you saw today, what is <strong>one</strong> way a student could <em>productively</em> use a tool like NotebookLM for their studies?</li>
+                        <li>What is <strong>one</strong> piece of advice or one warning you would give that student to ensure they use it <em>responsibly</em>?</li>
+                    </ol>
+                </div>
+
+                <p><strong>Congratulations, you have finished the guided pathway!</strong></p>
+
+            </article>
+        </main>
+
+        <footer>
+            <p>Workshop Materials | Birmingham Newman University</p>
+        </footer>
+    </div>
+
+</body>
+</html>
