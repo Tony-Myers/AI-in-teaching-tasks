@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Workshop - Advanced Pathway</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        nav {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .task-list > li {
+            background-color: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .challenge {
+             background-color: #f5faff;
+             border: 1px solid #c3d9ec;
+             padding: 15px;
+             border-radius: 8px;
+             margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Applied AI Training Workshop</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Overview</a>
+            <a href="novice.html">Novice (A)</a>
+            <a href="beginner.html">Beginner (B)</a>
+            <a href="advanced.html" class="active">Advanced (C/D)</a>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Advanced Pathway (C &amp; D)</h2>
+                <p><strong>Welcome,</strong></p>
+                <p>You have self-identified as having intermediate or advanced experience with AI. This pathway is designed to respect your time and expertise.</p>
+                <p>Your session will be structured in two parts:</p>
+                <ol>
+                    <li><strong>Part 1: Core Competency Review.</strong> A fast-paced review to ensure you have hands-on experience with the specific tools we are deploying (NotebookLM, our custom agents). We expect this will be straightforward for you.</li>
+                    <li><strong>Part 2: Advanced Challenges.</strong> This is the main focus of your session. You will choose from a menu of high-level tasks designed to let you critique, design, and "stress-test" these tools from the perspective of your specific discipline.</li>
+                </ol>
+
+                <hr>
+
+                <h3>Part 1: Core Competency Review (Fast-Paced)</h3>
+                <p>Please complete these four tasks efficiently. The goal is simply to ensure a common baseline with the specific tools. You will need the agent links provided by the facilitator and access to NotebookLM (<code>notebooklm.google.com</code>).</p>
+                
+                <ul class="task-list">
+                    <li>
+                        <p><strong>Task 1: Image Generation &amp; Bias Evaluation</strong></p>
+                        <p><strong>Action:</strong> Use Copilot to generate an image relevant to your field (e.g., <code>a courtroom scene</code>, <code>a police officer interviewing a witness</code>, <code>a social worker in a family home</code>, <code>a business negotiation</code>).</p>
+                        <p><strong>Analysis:</strong> Critically evaluate the outputs. What stereotypes (e.g., gender, race, power dynamics) are embedded? How much prompt engineering is required to get a professionally appropriate, non-biased image?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 2: NotebookLM Document Analysis</strong></p>
+                        <p><strong>Action:</strong> Upload a relevant, anonymised document from your field (e.g., a short journal article, a piece of legislation, a case study, a policy brief).</p>
+                        <p><strong>Analysis:</strong> Test its ability to generate a summary, identify key themes, and create an audio overview. Compare its summary to one from a general tool like Copilot. Is the "source-grounded" nature of NotebookLM valuable for your students?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 3: Agent Test (Academic Feedback)</strong></p>
+                        <p><strong>Action:</strong> Take a set of your own <em>real</em> (but fully anonymised) marker notes from a recent assignment.</p>
+                        <p><strong>Analysis:</strong> Use the <strong>Academic Feedback Assistant</strong> to generate the feedback. How well does it handle the nuances of your discipline? Does it save you time? What prompt customisations (e.g., "add a resource on 'legal analysis'") would make it more powerful for you?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 4: Agent Test (Socratic Tutor)</strong></p>
+                        <p><strong>Action:</strong> Open the <strong>Socratic Tutor</strong>. Pose as a student struggling with a core concept from your field (e.g., <em>actus reus</em> in Law, <em>Keynesian economics</em> in Business, <em>labelling theory</em> in Criminology).</p>
+                        <p><strong>Analysis:</strong> Evaluate its effectiveness. Does it successfully guide you? When does its Socratic method feel helpful, and when does it feel obstructive?</p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h3>Part 2: Advanced Challenges (Menu)</h3>
+                <p>Please choose <strong>one or more</strong> of the following challenges. This is where we need your subject-matter expertise.</p>
+
+                <div class="challenge">
+                    <h4>Challenge A: Critique and "Red Team" an Agent</h4>
+                    <p><strong>Objective:</strong> To stress-test the custom agents for accuracy and ethical robustness within your discipline.</p>
+                    <p><strong>Task:</strong></p>
+                    <ol>
+                        <li>Choose either the <strong>Academic Rigour Assistant</strong> or the <strong>Socratic Tutor</strong>.</li>
+                        <li>"Red Team" it. This means you actively try to break it, based on your professional knowledge.
+                            <ul>
+                                <li><strong>Law / Policing / Criminology:</strong> Ask it for case law or statistics. Try to make it "hallucinate" a citation (e.g., <code>Find me a UK case that supports...</code>). Ask it a complex ethical question (e.g., <code>What is the correct procedure for handling this evidence?</code>). Does it give a factually correct, cautious answer, or does it overstep?</li>
+                                <li><strong>Business / Accounting:</strong> Ask it for financial advice or to analyse a complex ethical dilemma (e.g., <code>My company can save money by using a supplier with poor labour standards. What should I do?</code>). Does it provide a balanced, academic answer, or does it give simplistic, un-critical advice?</li>
+                                <li><strong>Youth / Families:</strong> Ask it for advice on a sensitive safeguarding scenario. Does it respond safely? Does it understand its limitations and direct the "student" to a human or to appropriate procedures, or does it try to "solve" the scenario?</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Output:</strong> Be prepared to report back: Where did the agent fail? How must we warn students about these failure points?</p>
+                </div>
+
+                <div class="challenge">
+                    <h4>Challenge B: Design a New, Discipline-Specific Agent</h4>
+                    <p><strong>Objective:</strong> To move from <em>using</em> AI to <em>designing</em> it for a specific pedagogical gap.</p>
+                    <p><strong>Task:</strong></p>
+                    <ol>
+                        <li>Identify a high-volume, high-value task in your teaching or research that a custom agent could help with.</li>
+                        <li>Draft the <strong>system prompt</strong> for this new agent. (You have the three existing prompts as examples of structure).</li>
+                    </ol>
+                    <p><strong>Discipline-Specific Examples:</strong></p>
+                    <ul>
+                        <li><strong>Law:</strong> A "Case Law Analyst" that prompts a student to extract the <em>ratio decidendi</em> and <em>obiter dicta</em> from an uploaded judgment.</li>
+                        <li><strong>Business:</strong> A "Business Ethics Simulator" that presents a case study and takes on the role of a stakeholder (e.g., "I am the CFO. Tell me why I should reject this profitable but unethical proposal.").</li>
+                        <li><strong>Criminology:</strong> A "Theory Applicator" that takes a student's summary of a case and prompts them to apply two different criminological theories to it.</li>
+                        <li><strong>Youth Work / Policing:</strong> A "Reflective Practice Partner" that guides a student through a structured reflection (e.g., using Gibbs' Cycle) on a scenario from their placement or professional practice.</li>
+                    </ul>
+                </div>
+
+                <div class="challenge">
+                    <h4>Challenge C: Develop a Pedagogical Framework</h4>
+                    <p><strong>Objective:</strong> To design a practical, in-class activity for your students using one of the available tools.</p>
+                    <p><strong>Task:</strong></p>
+                    <ol>
+                        <li>Choose either <strong>NotebookLM</strong> or the <strong>Socratic Tutor</strong>.</li>
+                        <li>Design a 30-minute learning activity for one of your modules.</li>
+                        <li>Define the learning objective, the student task, and—most importantly—your "containment" strategy. How will you ensure this activity promotes <em>learning</em> and not just <em>copying</em>? (e.g., "Students use NotebookLM to summarise two articles, then must debate the differences <em>without</em> notes.")</li>
+                    </ol>
+                    <p><strong>Output:</strong> A one-page activity plan.</p>
+                </div>
+
+                <hr>
+
+                <h3>Part 3: Final Reflection (For Group Discussion)</h3>
+                <ul>
+                    <li>As an advanced user, what do you see as the single biggest <strong>opportunity</strong> and single biggest <strong>risk</strong> of embedding these tools in your curriculum?</li>
+                    <li>What is one action item you will take back to your programme team?</li>
+                </ul>
+
+            </article>
+        </main>
+
+        <footer>
+            <p>Workshop Materials | Birmingham Newman University</p>
+        </footer>
+    </div>
+
+</body>
+</html>
