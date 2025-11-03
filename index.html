@@ -1,28 +1,114 @@
-<!-- Combined HTML for index.html (overview) with shared CSS/JS. You can duplicate this file and replace the <main> block for novice, beginner, and advanced versions. -->
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Applied AI Workshop – Overview</title>
+<title>Applied AI Workshop – Overview (Clean Light)</title>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Applied AI in Higher Education workshop materials">
 <style>
-/* Base styles (shared across all pages) */
-:root{--bg:#0b0f14;--panel:#0f1720;--card:#111a26;--muted:#8aa0b2;--text:#e6eef5;--brand:#3aa7ff;--brand-2:#6ee7b7;--accent:#ffd166;--danger:#ff6b6b;--radius:16px;--shadow:0 8px 24px rgba(0,0,0,.25);--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
-@media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--panel:#ffffff;--card:#ffffff;--muted:#556575;--text:#0c1723;--brand:#1e88e5;--brand-2:#0ea5e9;--accent:#b7791f;--danger:#c53030;--shadow:0 8px 24px rgba(0,0,0,.08)}}
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:linear-gradient(180deg,var(--bg),#06090d);color:var(--text);font-family:var(--sans);line-height:1.6}
-a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1100px;margin:0 auto;padding:24px}
-.header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(160%) blur(6px);background:linear-gradient(180deg,rgba(20,27,36,.9),rgba(20,27,36,.6));border-bottom:1px solid rgba(255,255,255,.06)}.header-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 24px}.brand{display:flex;gap:12px;align-items:center;font-weight:700}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}.nav a[aria-current="page"]{background:rgba(58,167,255,.15);border-color:rgba(58,167,255,.35)}
-.hero{padding:48px 0 8px}h1{font-size:clamp(26px,4vw,40px)}.subtitle{color:var(--muted);max-width:70ch;margin-bottom:24px}.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.card{background:linear-gradient(180deg,var(--card),#0c131c);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}.badge{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
-.section{margin:28px 0}.lead{color:var(--muted)}.timeline{position:relative;margin:16px 0;padding-left:24px}.timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.14)}.tl-item{position:relative;margin-bottom:14px}.tl-item:before{content:"";position:absolute;left:-2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(58,167,255,.25)}.tl-time{font-weight:700}.callout{border-left:4px solid var(--brand);background:linear-gradient(90deg,rgba(58,167,255,.18),transparent);padding:12px 14px;border-radius:10px;margin:12px 0}.footer{color:var(--muted);padding:32px 24px;border-top:1px solid rgba(255,255,255,.06)}
+/* CLEAN, HIGH-CONTRAST LIGHT THEME (WCAG 2.2 AA/AAA where feasible)
+   - No gradients, no translucency, no dark backgrounds
+   - Large base type (20px), wide line-height
+   - Underlined links, obvious focus states
+   - Clear visual hierarchy, extra spacing
+*/
+:root{
+  --bg:#ffffff;            /* White background */
+  --text:#111111;          /* Near-black text */
+  --muted:#333333;         /* Dark grey for subtext */
+  --panel:#ffffff;
+  --card:#ffffff;
+  --border:#1f2937;        /* Dark border for strong separation */
+  --brand:#0b57d0;         /* Accessible blue */
+  --accent:#b91c1c;        /* Warning red */
+  --radius:10px;
+  --shadow:none;           /* Avoid fuzzy contrast */
+  --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --sans: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+  --base-font:20px;        /* Larger base */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:var(--base-font);line-height:1.8}
+
+/* Links are always underlined */
+a{color:var(--brand);text-decoration:underline;text-underline-offset:2px}
+a:hover{text-decoration-thickness:3px}
+
+/* Strong, visible focus */
+:focus-visible{outline:4px solid #f59e0b;outline-offset:2px}
+
+/* Header */
+.header{border-bottom:3px solid var(--border);background:var(--panel)}
+.header-inner{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:22px}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{display:inline-block;padding:8px 12px;border:2px solid transparent;border-radius:8px}
+.nav a[aria-current="page"]{border-color:var(--border)}
+
+/* Layout */
+.container{max-width:1200px;margin:0 auto;padding:24px 20px}
+.hero{padding:24px 0 0}
+.hero h1{font-size:clamp(30px,4vw,46px);margin:0 0 8px}
+.subtitle{color:var(--muted);max-width:80ch;margin:0}
+.section{margin:28px 0}
+.lead{color:var(--muted)}
+
+/* Cards: simple borders for separation */
+.grid{display:grid;gap:18px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card);border:3px solid var(--border);border-radius:var(--radius);padding:16px}
+.card h3{margin-top:6px}
+.badge{display:inline-block;font-size:14px;padding:2px 8px;border-radius:999px;border:2px solid var(--border);color:var(--muted)}
+
+/* Timeline with solid lines and large type */
+.timeline{position:relative;margin:16px 0;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:4px;background:var(--border)}
+.tl-item{position:relative;margin:0 0 20px}
+.tl-item::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--border)}
+.tl-time{font-weight:800}
+
+/* Buttons (links styled as buttons) */
+.btn{display:inline-block;padding:12px 16px;border-radius:10px;border:3px solid var(--border);text-decoration:none;color:var(--text)}
+.btn:hover{background:#f3f4f6}
+
+/* Print */
+@media print{
+  a{text-decoration:none}
+}
 </style>
 </head>
 <body>
-<header class="header"><div class="header-inner"><div class="brand">Applied AI Workshop</div><nav class="nav"><a href="index.html" aria-current="page">Overview</a><a href="novice.html">Novice</a><a href="beginner.html">Beginner</a><a href="advanced.html">Advanced</a></nav></div></header>
-<main class="container">
-<section class="hero"><h1>Applied AI in Higher Education</h1><p class="subtitle">A practical, multi-pathway workshop for academics across disciplines. Hands-on tasks, critical reflection, and ready-to-use artefacts for teaching.</p>
-<div class="grid cards"><div class="card"><span class="badge">Outcome</span><h3>Image generation & bias</h3><p>Create and critically evaluate images for teaching materials, identifying stereotypes and contextual mismatches.</p></div><div class="card"><span class="badge">Outcome</span><h3>Source-grounded AI</h3><p>Use NotebookLM to summarise and create audio from your own documents, with verifiable citations.</p></div><div class="card"><span class="badge">Outcome</span><h3>Custom agents</h3><p>Work with specialist Copilot agents (Rigour, Socratic, Feedback) and critique their behaviour.</p></div><div class="card"><span class="badge">Outcome</span><h3>Student support</h3><p>Draft guidance and assessment-aligned activities that promote responsible, effective student use.</p></div></div></section>
-<section class="section"><h2>Agenda (2 hours 30 minutes)</h2><p class="lead">Assumes participants have seen a 30‑minute pre‑talk showcasing a module where students used AI and recorded their use.</p><div class="timeline"><div class="tl-item"><div class="tl-time">00:00–00:10</div><div class="tl-title"><strong>Welcome & diagnostic poll</strong></div></div><div class="tl-item"><div class="tl-time">00:10–00:25</div><div class="tl-title"><strong>Link to prior module</strong></div></div><div class="tl-item"><div class="tl-time">00:25–00:55</div><div class="tl-title"><strong>Activity 1:</strong> Image generation & bias</div></div><div class="tl-item"><div class="tl-time">00:55–01:00</div><div class="tl-title">Break</div></div><div class="tl-item"><div class="tl-time">01:00–01:40</div><div class="tl-title"><strong>Activity 2:</strong> Source-grounded AI</div></div><div class="tl-item"><div class="tl-time">01:40–02:05</div><div class="tl-title"><strong>Activity 3:</strong> Custom agents</div></div><div class="tl-item"><div class="tl-time">02:05–02:25</div><div class="tl-title"><strong>Activity 4:</strong> Student support artefact</div></div><div class="tl-item"><div class="tl-time">02:25–02:30</div><div class="tl-title">Plenary & next steps</div></div></div><div class="callout">You can switch pathways at any time. Facilitators will support transitions.</div></section>
-</main>
-<footer class="footer">Workshop Materials · Built for a mixed-discipline HE audience · CC‑BY</footer>
-</body>
-</html>
+<a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+<header class="header" role="banner">
+  <div class="header-inner">
+    <div class="brand">Applied AI Workshop</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="novice.html">Novice</a>
+      <a href="beginner.html">Beginner</a>
+      <a href="advanced.html">Advanced</a>
+    </nav>
+  </div>
+</header>
+<main class="container" id="main-content" role="main">
+  <section class="hero">
+    <h1>Applied AI in Higher Education</h1>
+    <p class="subtitle">A practical, multi-pathway workshop for academics across disciplines. Hands-on tasks, critical reflection, and ready-to-use artefacts for teaching.</p>
+  </section>
+
+  <section class="section" aria-labelledby="outcomes-h2">
+    <h2 id="outcomes-h2">Outcomes</h2>
+    <div class="grid cards" role="list">
+      <article class="card" role="listitem" aria-labelledby="o1"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o1">Image generation & bias</h3><p>Create and critically evaluate images for teaching materials, identifying stereotypes and contextual mismatches.</p></article>
+      <article class="card" role="listitem" aria-labelledby="o2"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o2">Source-grounded AI</h3><p>Use NotebookLM to summarise and create audio from your own documents, with verifiable citations.</p></article>
+      <article class="card" role="listitem" aria-labelledby="o3"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o3">Custom agents</h3><p>Work with specialist Copilot agents (Rigour, Socratic, Feedback) and critique their behaviour.</p></article>
+      <article class="card" role="listitem" aria-labelledby="o4"><span class="badge" aria-hidden="true">Outcome</span><h3 id="o4">Student support</h3><p>Draft guidance and assessment-aligned activities that promote responsible, effective student use.</p></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="agenda-h2">
+    <h2 id="agenda-h2">Agenda (2 hours 30 minutes)</h2>
+    <p class="lead">Assumes participants have seen a 30-minute pre-talk showcasing a module where students used AI and recorded their use.</p>
+    <div class="timeline" aria-l
