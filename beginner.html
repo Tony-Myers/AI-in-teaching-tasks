@@ -4,154 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applied AI Workshop - Beginner Pathway</title>
-    
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --beginner-color: #3498db;
-            --advanced-color: #e74c3c;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --light-bg: #f4f7f6;
-            --card-bg: #ffffff;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            background-color: var(--light-bg);
+            background-color: #f4f7f6;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 2rem 0;
-            margin: -20px -20px 30px -20px;
+            padding: 2rem 1rem;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
             text-align: center;
         }
-        header h1 { font-size: 2rem; margin-bottom: 0.5rem; color: white; }
-        .pathway-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: 600;
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
         }
         nav {
-            background-color: white;
-            padding: 15px;
+            background-color: #ecf0f1;
+            padding: 12px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         nav a {
-            flex: 1 1 200px;
-            padding: 12px 20px;
+            display: inline-block;
+            padding: 10px 18px;
             text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 600;
+            color: #2980b9;
+            font-weight: bold;
             border-radius: 6px;
-            border: 2px solid #e0e0e0;
-            text-align: center;
-            transition: all 0.3s ease;
+            margin: 2px;
+            transition: all 0.2s ease;
         }
         nav a:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
+            background-color: #3498db;
+            color: #ffffff;
+            transform: translateY(-1px);
         }
-        nav a.active { background-color: var(--secondary-color); color: white; }
-        main {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
         }
         h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin: 30px 0 20px 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        h3, h4 { color: var(--primary-color); margin: 20px 0 10px 0; }
-        .task {
-            border: 2px solid var(--secondary-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            background-color: #fdfdfd;
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 12px;
         }
-        .task-time {
-            background: #fff9e6;
-            border: 1px solid #ffd700;
-            padding: 5px 12px;
-            border-radius: 5px;
-            display: inline-block;
-            font-weight: 600;
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        li {
             margin-bottom: 10px;
+        }
+        .task, .task-list > li, .challenge {
+            background-color: #fdfdfd;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .task:hover, .task-list > li:hover, .challenge:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.15);
         }
         .hints {
             background-color: #f9f9f9;
             border: 2px dashed #bdc3c7;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 6px;
             margin-top: 15px;
         }
-        .hints h4 { margin-top: 0; color: #7f8c8d; }
-        .challenge {
-            background-color: #f5faff;
-            border: 2px solid #c3d9ec;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        .hints h4 {
+            color: #7f8c8d;
+            margin-top: 0;
         }
-        .challenge h4 { color: var(--advanced-color); }
-        ul, ol { padding-left: 25px; margin: 15px 0; }
-        li { margin-bottom: 10px; }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
         code {
-            font-family: monospace;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
             background-color: #ecf0f1;
             padding: 2px 6px;
             border-radius: 3px;
             color: #c7254e;
         }
-        pre {
-            background-color: #2c3e50;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
+        pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
         }
-        pre code { background: none; color: #f8f8f2; padding: 0; }
         blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
             margin: 15px 0;
-            background-color: #f9f9f9;
-            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 4px;
+        }
+        .challenge {
+            background-color: #fff5f5;
+            border-color: #e74c3c;
         }
         footer {
             text-align: center;
             margin-top: 40px;
-            padding: 20px;
-            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
             font-size: 0.9em;
+            color: #7f8c8d;
         }
+        
+        
+        
         @media (max-width: 768px) {
-            .container { padding: 10px; }
-            header { margin: -10px -10px 20px -10px; }
-            nav { flex-direction: column; }
-            nav a { width: 100%; }
-            main { padding: 20px 15px; }
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            header {
+                margin: -15px -15px 20px -15px;
+                padding: 1.5rem 1rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            header {
+                background: #2c3e50;
+                color: white;
+            }
+            nav {
+                display: none;
+            }
         }
     </style>
-
 </head>
 <body>
 
@@ -164,12 +196,14 @@
             <a href="index.html">Overview</a>
             <a href="novice.html">Novice (A)</a>
             <a href="beginner.html" class="active">Beginner (B)</a>
-            <a href="advanced.html">Advanced (C/D)</a>
+            <a href="intermediate.html">Intermediate (C)</a>
+            <a href="advanced.html">Advanced (D)</a>
         </nav>
 
         <main>
             <article>
                 <h2>Beginner (B) Pathway: Task &amp; Hint Sheet</h2>
+                
                 <p><strong>Welcome!</strong> You are in the Beginner pathway because you have already experimented with AI. This session is about moving from simple experiments to achieving <strong>reliable, repeatable academic results</strong>.</p>
                 <p>Your goal is to complete the <strong>four core tasks</strong> below. For each task, try to solve the <strong>Problem</strong> on your own first. If you get stuck or want to see a more efficient way, consult the <strong>Hints &amp; Prompts</strong>.</p>
                 
@@ -194,7 +228,6 @@
 
                 <div class="task">
                     <h3>Task 1: Image Generation & Critical Evaluation</h3>
-                    <span class="task-time">⏱️ 20-25 minutes</span>
                     <p><strong>Objective:</strong> To create a specific image for your course and critically evaluate its hidden biases.</p>
                     <p><strong>Problem:</strong>
                     Go to the standard Microsoft Copilot. Generate an image relevant to your discipline (e.g., "a business meeting," "a crime scene investigation," "a youth worker counselling a client"). Look at the first result. Now, iterate on your prompt to generate a <em>new</em> image that is more inclusive, specific, and professionally appropriate for the UK context.</p>
@@ -213,7 +246,6 @@
 
                 <div class="task">
                     <h3>Task 2: Source-Grounded Summary & Audio</h3>
-                    <span class="task-time">⏱️ 25-30 minutes</span>
                     <p><strong>Objective:</strong> To use NotebookLM to summarise <em>your own</em> documents and create an audio version.</p>
                     <p><strong>Problem:</strong>
                     Go to NotebookLM (<code>notebooklm.google.com</code>). Create a new notebook and upload a document you use for teaching (e.g., lecture notes, a key reading). Ask NotebookLM to create a 5-bullet summary and then a 2-minute audio "podcast" of that summary.</p>
@@ -233,8 +265,7 @@
                 </div>
 
                 <div class="task">
-                    <h3>Task 3: Using the Academic Feedback Assistant</h3>
-                    <span class="task-time">⏱️ 20 minutes</span>
+                    <h3>Task 3: Using a Custom Agent (Academic Feedback)</h3>
                     <p><strong>Objective:</strong> To use the <strong>Academic Feedback Assistant</strong> to save time and add structure to your marking.</p>
                     <p><strong>Problem:</strong>
                     Open the <strong>Academic Feedback Assistant</strong> agent (that you added via the link). Below is a set of messy, raw marker notes. Your task is to copy these notes into the agent and provide the <em>other required information</em> to generate the final, student-facing feedback.</p>
@@ -261,7 +292,6 @@ Marker Office Location: ED-204
 
                 <div class="task">
                     <h3>Task 4 (Extension): Try the Other Agents</h3>
-                    <span class="task-time">⏱️ 15-20 minutes</span>
                     <p><strong>Objective:</strong> To understand the different purposes of the other two agents.</p>
                     <p><strong>Problem:</strong>
                     If you have finished, try one or both of these:</p>
@@ -295,7 +325,7 @@ Marker Office Location: ED-204
         </main>
 
         <footer>
-            <p>Workshop Materials | Birmingham Newman University</p>
+            <p>Tony Myers 2025 | Birmingham Newman University</p>
         </footer>
     </div>
 
