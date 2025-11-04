@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Workshop - Intermediate/Advanced Pathway</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 1rem;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            background-color: #ecf0f1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 18px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            border-radius: 6px;
+            margin: 2px;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .task, .task-list > li, .challenge {
+            background-color: #fdfdfd;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .task:hover, .task-list > li:hover, .challenge:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.15);
+        }
+        .hints {
+            background-color: #f9f9f9;
+            border: 2px dashed #bdc3c7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        .hints h4 {
+            color: #7f8c8d;
+            margin-top: 0;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #c7254e;
+        }
+        pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 4px;
+        }
+        .challenge {
+            background-color: #fff5f5;
+            border-color: #e74c3c;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            header {
+                margin: -15px -15px 20px -15px;
+                padding: 1.5rem 1rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            header {
+                background: #2c3e50;
+                color: white;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Applied AI Training Workshop</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Overview</a>
+            <a href="novice.html">Novice (A)</a>
+            <a href="beginner.html">Beginner (B)</a>
+            <a href="advanced.html" class="active">Intermediate (C)</a>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Intermediate Pathway (C)</h2>
+                
+                <p><strong>Welcome,</strong></p>
+                <p>You have intermediate experience with AI tools. This pathway focuses on developing critical evaluation skills and understanding the specific tools deployed in this institution.</p>
+                <p>Your session consists of:</p>
+                <ol>
+                    <li><strong>Core Competency Tasks.</strong> Complete the four core tasks efficiently, focusing on critical evaluation of outputs rather than following step-by-step instructions.</li>
+                    <li><strong>Discipline-Specific Reflection.</strong> Consider how these tools apply to your teaching context and what guidance students will need.</li>
+                </ol>
+
+                <hr>
+
+                <h3>Part 1: Core Competency Review (Fast-Paced)</h3>
+                <p>Please complete these four tasks efficiently. The goal is simply to ensure a common baseline with the specific tools. You will need the agent links provided by the facilitator and access to NotebookLM (<code>notebooklm.google.com</code>).</p>
+                
+                <ul class="task-list">
+                    <li>
+                        <p><strong>Task 1: Image Generation &amp; Bias Evaluation</strong></p>
+                        <p><strong>Action:</strong> Use Copilot to generate an image relevant to your field (e.g., <code>a courtroom scene</code>, <code>a police officer interviewing a witness</code>, <code>a social worker in a family home</code>, <code>a business negotiation</code>).</p>
+                        <p><strong>Analysis:</strong> Critically evaluate the outputs. What stereotypes (e.g., gender, race, power dynamics) are embedded? How much prompt engineering is required to get a professionally appropriate, non-biased image?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 2: NotebookLM Document Analysis</strong></p>
+                        <p><strong>Action:</strong> Upload a relevant, anonymised document from your field (e.g., a short journal article, a piece of legislation, a case study, a policy brief).</p>
+                        <p><strong>Analysis:</strong> Test its ability to generate a summary, identify key themes, and create an audio overview. Compare its summary to one from a general tool like Copilot. Is the "source-grounded" nature of NotebookLM valuable for your students?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 3: Agent Test (Academic Feedback)</strong></p>
+                        <p><strong>Action:</strong> Take a set of your own <em>real</em> (but fully anonymised) marker notes from a recent assignment.</p>
+                        <p><strong>Analysis:</strong> Use the <strong>Academic Feedback Assistant</strong> to generate the feedback. How well does it handle the nuances of your discipline? Does it save you time? What prompt customisations (e.g., "add a resource on 'legal analysis'") would make it more powerful for you?</p>
+                    </li>
+                    <li>
+                        <p><strong>Task 4: Agent Test (Socratic Tutor)</strong></p>
+                        <p><strong>Action:</strong> Open the <strong>Socratic Tutor</strong>. Pose as a student struggling with a core concept from your field (e.g., <em>actus reus</em> in Law, <em>Keynesian economics</em> in Business, <em>labelling theory</em> in Criminology).</p>
+                        <p><strong>Analysis:</strong> Evaluate its effectiveness. Does it successfully guide you? When does its Socratic method feel helpful, and when does it feel obstructive?</p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h3>Part 3: Final Reflection (For Group Discussion)</h3>
+                <ul>
+                    <li>As an advanced user, what do you see as the single biggest <strong>opportunity</strong> and single biggest <strong>risk</strong> of embedding these tools in your curriculum?</li>
+                    <li>What is one action item you will take back to your programme team?</li>
+                </ul>
+
+            </article>
+        </main>
+
+        <footer>
+            <p>Tony Myers 2025 | Birmingham Newman University</p>
+        </footer>
+    </div>
+
+</body>
+</html>
