@@ -4,607 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applied AI Workshop - Novice Pathway</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --novice-color: #27ae60;
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --light-bg: #f4f7f6;
-            --card-bg: #ffffff;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            background: var(--light-bg);
+            background-color: #f4f7f6;
             color: #333;
-        }
-        
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        
-        header {
-            background: linear-gradient(135deg, var(--novice-color) 0%, #229954 100%);
-            color: white;
-            padding: 2rem 0;
-            margin: -20px -20px 30px -20px;
-            text-align: center;
-        }
-        
-        header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-        
-        .pathway-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: 600;
-        }
-        
-        nav {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        nav a {
-            flex: 1 1 200px;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 600;
-            border-radius: 6px;
-            border: 2px solid #e0e0e0;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        nav a.active {
-            background: var(--novice-color);
-            color: white;
-            border-color: var(--novice-color);
-        }
-        
-        main {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .progress-tracker {
-            background: #d4edda;
-            border-left: 4px solid var(--novice-color);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 5px;
-        }
-        
-        .progress-tracker h3 {
-            color: var(--novice-color);
-            margin-bottom: 15px;
-        }
-        
-        .progress-bar {
-            background: #e0e0e0;
-            height: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        
-        .progress-fill {
-            background: linear-gradient(90deg, var(--novice-color) 0%, #229954 100%);
-            height: 100%;
-            width: 0%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            transition: width 0.5s ease;
-        }
-        
-        .welcome-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .welcome-box h2 { color: white; margin-bottom: 15px; }
-        
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--novice-color);
-            padding-bottom: 10px;
-            margin: 30px 0 20px 0;
-        }
-        
-        h3 { color: var(--primary-color); margin: 25px 0 15px 0; }
-        h4 { color: var(--novice-color); margin: 20px 0 10px 0; }
-        
-        .task {
-            border: 3px solid var(--novice-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            background: #fafafa;
-            position: relative;
-        }
-        
-        .task-number {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--novice-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-        
-        .task h3 { margin-top: 10px; color: var(--novice-color); }
-        
-        .task-time {
-            background: #fff9e6;
-            border: 1px solid #ffd700;
-            padding: 5px 12px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .objective-box {
-            background: #e8f4f8;
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        
-        .objective-box strong { color: var(--secondary-color); }
-        
-        ol, ul { padding-left: 25px; margin: 15px 0; }
-        li { margin-bottom: 12px; }
-        
-        code {
-            font-family: monospace;
-            background: #ecf0f1;
-            color: #c7254e;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-        
-        pre {
-            background: #2c3e50;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-        
-        pre code {
-            background: none;
-            color: #f8f8f2;
+            margin: 0;
             padding: 0;
         }
-        
-        blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px 20px;
-            margin: 15px 0;
-            background: #f9f9f9;
-            border-radius: 5px;
-        }
-        
-        .reflection-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #ffffff;
             border-radius: 8px;
-            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        .reflection-box h4 {
-            color: #856404;
-            margin-top: 0;
-        }
-        
-        .agent-link {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin: 5px 5px 5px 0;
-            transition: all 0.3s ease;
+            padding: 2rem 1rem;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
         }
-        
-        .agent-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .agent-link::before { content: '🤖 '; }
-        
-        .success-criteria {
-            background: #d4edda;
-            border: 2px solid #c3e6cb;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        
-        .success-criteria h4 {
-            color: var(--novice-color);
-            margin-top: 0;
-        }
-        
-        .tip-box {
-            background: #e7f3ff;
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        
-        .tip-box::before {
-            content: '💡 Tip: ';
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .warning-box {
-            background: #fff3e6;
-            border-left: 4px solid #f39c12;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        
-        .warning-box::before {
-            content: '⚠️ Important: ';
-            font-weight: bold;
-            color: #f39c12;
-        }
-        
-        .congratulations {
-            background: linear-gradient(135deg, var(--novice-color) 0%, #229954 100%);
+        header h1 {
             color: white;
-            padding: 30px;
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            background-color: #ecf0f1;
+            padding: 12px;
             border-radius: 8px;
             text-align: center;
-            margin: 30px 0;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        
-        .congratulations h3 {
-            color: white;
-            font-size: 1.8rem;
+        nav a {
+            display: inline-block;
+            padding: 10px 18px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            border-radius: 6px;
+            margin: 2px;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+        h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
             margin-bottom: 15px;
         }
-        
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .task, .task-list > li, .challenge {
+            background-color: #fdfdfd;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .task:hover, .task-list > li:hover, .challenge:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.15);
+        }
+        .hints {
+            background-color: #f9f9f9;
+            border: 2px dashed #bdc3c7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        .hints h4 {
+            color: #7f8c8d;
+            margin-top: 0;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #c7254e;
+        }
+        pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 4px;
+        }
+        .challenge {
+            background-color: #fff5f5;
+            border-color: #e74c3c;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
-            padding: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
             color: #7f8c8d;
         }
         
+        
+        
         @media (max-width: 768px) {
-            .container { padding: 10px; }
-            header { margin: -10px -10px 20px -10px; padding: 1.5rem 1rem; }
-            nav { flex-direction: column; }
-            nav a { width: 100%; }
-            main { padding: 20px 15px; }
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            header {
+                margin: -15px -15px 20px -15px;
+                padding: 1.5rem 1rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            header {
+                background: #2c3e50;
+                color: white;
+            }
+            nav {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>Applied AI Training Workshop</h1>
-            <span class="pathway-badge">Novice Pathway (A) - Guided Practice</span>
         </header>
 
         <nav>
             <a href="index.html">Overview</a>
             <a href="novice.html" class="active">Novice (A)</a>
             <a href="beginner.html">Beginner (B)</a>
-            <a href="advanced.html">Intermediate/Advanced (C/D)</a>
+            <a href="intermediate.html">Intermediate (C)</a>
+            <a href="advanced.html">Advanced (D)</a>
         </nav>
 
         <main>
-            <div class="progress-tracker">
-                <h3>Your Progress</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill">0% Complete</div>
-                </div>
-                <p><strong>Estimated total time:</strong> 90-100 minutes | <strong>Tasks:</strong> 0 of 4 completed</p>
-            </div>
-
-            <div class="welcome-box">
-                <h2>Welcome to the Novice Pathway!</h2>
-                <p>This worksheet will guide you through the core AI tasks step-by-step. There are no "silly questions"—the goal is to experiment in a safe environment and build your confidence.</p>
-                <p><strong>Remember:</strong> Ask a facilitator for help at any point.</p>
-            </div>
-
-            <div class="task">
-                <span class="task-number">SETUP</span>
-                <h3>Important First Step: Accessing the Tools</h3>
-                <span class="task-time">⏱️ 5-10 minutes</span>
+            <article>
+                <h2>Novice (A) Pathway: Guided Practice Worksheet</h2>
                 
-                <div class="objective-box">
-                    <p><strong>Objective:</strong> Add the custom AI agents to your Microsoft Copilot.</p>
+                <p><strong>Welcome!</strong> This worksheet is your guide for today's session. It is designed to walk you through the core AI tasks step-by-step. There are no "silly questions"â€”the goal is to experiment in a safe environment and build your confidence with these new tools.</p>
+                <p>Please ask a facilitator for help at any point.</p>
+
+                <hr>
+
+                <div class="task">
+                    <h3>Important First Step: Accessing the Tools</h3>
+                    <p>To use the special "agents," you must first add them to your Copilot.</p>
+                    <ol>
+                        <li>Ensure you are logged into your University Microsoft 365 account.</li>
+                        <li>Go to the main Copilot interface (e.g., <code>copilot.microsoft.com</code> or the Copilot app in Teams). <strong>Note:</strong> These agents may not appear in the small pop-ups in Word or Outlook.</li>
+                        <li>Click this link to add our first agent:
+                            <ul>
+                                <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_0d907d8e-7969-f76d-f5be-339ec5474aac&source=embedded-builder" target="_blank" rel="noopener noreferrer"><strong>Click to Add: Academic Feedback Assistant</strong></a></li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
 
-                <ol>
-                    <li>Ensure you are logged into your <strong>University Microsoft 365 account</strong>.</li>
-                    <li>Go to <code>copilot.microsoft.com</code> or open Copilot in Microsoft Teams.
-                        <div class="warning-box">
-                            These agents may not appear in small Copilot pop-ups within Word or Outlook. Use the main chat interface.
-                        </div>
-                    </li>
-                    <li>Click each link below to add the agents:
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_0d907d8e-7969-f76d-f5be-339ec5474aac&source=embedded-builder" target="_blank" class="agent-link">Add: Academic Feedback Assistant</a></li>
-                            <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_ef40e31a-faa0-5e5c-2f90-a22c14d9ed13&source=embedded-builder" target="_blank" class="agent-link">Add: Academic Rigour Assistant</a></li>
-                            <li><a href="https://m365.cloud.microsoft:443/chat/?titleId=T_29420ced-78cb-75c9-d668-92906ac92f64&source=embedded-builder" target="_blank" class="agent-link">Add: Socratic Tutor</a></li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <div class="success-criteria">
-                    <h4>✓ Success Criteria</h4>
-                    <ul>
-                        <li>You have clicked all three agent links</li>
-                        <li>You can see the agents in your Copilot interface</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="task">
-                <span class="task-number">TASK 1</span>
-                <h3>Creating Images & Spotting Bias</h3>
-                <span class="task-time">⏱️ 20-25 minutes</span>
-                
-                <div class="objective-box">
-                    <p><strong>Objective:</strong> Use AI to generate images and think critically about bias.</p>
+                <div class="task">
+                    <h3>Task 1: Creating Images & Spotting Bias</h3>
+                    <p><strong>Objective:</strong> To use AI to generate an image (e.g., for a lecture slide) and to think critically about its output.</p>
                     <p><strong>Tool:</strong> Microsoft Copilot (Standard version)</p>
+                    
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Open Microsoft Copilot. Make sure no special agents are selected (it should just say "Copilot").</li>
+                        <li>In the chat box, type a prompt relevant to your field. For example:
+                            <blockquote><code>Create a photorealistic image of a "lawyer in a courtroom."</code><br><em>Or</em><br><code>Create a photorealistic image of a "police officer."</code></blockquote>
+                        </li>
+                        <li>Copilot will generate 4 images. Look at them closely.
+                            <ul>
+                                <li><em>What do you notice?</em> (e.g., What is the typical gender or ethnicity? What is the power dynamic in the image? Does it look like a UK courtroom or officer?)</li>
+                            </ul>
+                        </li>
+                        <li>Now, let's try a more specific prompt to correct this. Type:
+                            <blockquote><code>Create a photorealistic image of [describe specific characteristics including diversity, setting, and UK context].</code><br><br>Example: Create a photorealistic image of a diverse group of three UK police officers (including women and people of different ethnicities) speaking calmly with members of the public in a British town centre.</blockquote>
+                        </li>
+                    </ol>
+
+                    <h4>Reflection (Just for you to think about):</h4>
+                    <p>The first prompt likely showed bias (e.g., a white male) because AI is trained on internet data, which contains stereotypes. For professional fields like Law and Policing, these stereotypes can be harmful. We must be very <strong>specific</strong> and <strong>critical</strong> in our prompts.</p>
                 </div>
 
-                <h4>Instructions:</h4>
-                <ol>
-                    <li>Open Microsoft Copilot (no agents selected).</li>
-                    <li>Type a prompt relevant to your field:
-                        <blockquote>
-                            <code>Create a photorealistic image of a lawyer in a courtroom.</code><br><br>
-                            <code>Create a photorealistic image of a police officer.</code><br><br>
-                            <code>Create a photorealistic image of a business meeting.</code>
-                        </blockquote>
-                    </li>
-                    <li>Examine the four images. What do you notice about:
-                        <ul>
-                            <li>Gender representation?</li>
-                            <li>Ethnicity representation?</li>
-                            <li>Power dynamics?</li>
-                            <li>UK vs. international context?</li>
-                        </ul>
-                    </li>
-                    <li>Now try a more specific prompt:
-                        <blockquote>
-                            <code>Create a photorealistic image of a diverse group of three UK police officers (including women and people of different ethnicities) speaking calmly with members of the public in a British town centre.</code>
-                        </blockquote>
-                    </li>
-                    <li>Compare the results.</li>
-                </ol>
+                <div class="task">
+                    <h3>Task 2: Summarising Texts & Creating Audio with NotebookLM</h3>
+                    <p><strong>Objective:</strong> To use a "source-grounded" AI to safely summarise your <em>own</em> documents.</p>
+                    <p><strong>Tool:</strong> NotebookLM (a free Google tool)</p>
 
-                <div class="reflection-box">
-                    <h4>🤔 Reflection</h4>
-                    <p>The first prompt likely showed bias (e.g., white males in authority) because AI is trained on internet data containing stereotypes. For professional fields like Law and Policing, these stereotypes can be harmful.</p>
-                    <p><strong>Key Learning:</strong> Be <strong>specific</strong> and <strong>critical</strong>. AI will not automatically generate inclusive images.</p>
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>In your browser, go to <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">notebooklm.google.com</a>.</li>
+                        <li>Click the "<strong>+ New notebook</strong>" button.</li>
+                        <li>On the left, find the "Sources" box. Click the "<strong>+ Add Source</strong>" button.</li>
+                        <li>Select "Upload file" and upload a PDF or text file. (Your facilitator can provide a sample file, or you can use one of your own).</li>
+                        <li>Once uploaded, click on the document's name. The document will open.</li>
+                        <li>At the bottom of the page is a chat box. Type this prompt:
+                            <blockquote><code>Generate a 5-point summary of this source.</code></blockquote>
+                        </li>
+                        <li>Read the summary. You will see small numbers, like <code>[1]</code>. Click one. Notice how it shows you <em>exactly</em> where in your document the information came from. This is "source-grounded" and prevents the AI from "making things up" (hallucinating).</li>
+                        <li>Now, type a new prompt in the same chat box:
+                            <blockquote><code>Create a 2-minute audio overview of this source, suitable for a student's revision.</code></blockquote>
+                        </li>
+                        <li>Press the <strong>Play</strong> button to listen.</li>
+                    </ol>
+
+                    <h4>Reflection:</h4>
+                    <p>NotebookLM <em>only</em> uses the documents you give it. This makes it a much safer tool for summarising your lecture notes or assigned readings for students.</p>
                 </div>
 
-                <div class="success-criteria">
-                    <h4>✓ Success Criteria</h4>
-                    <ul>
-                        <li>Generated at least two sets of images</li>
-                        <li>Can identify differences between vague and specific prompts</li>
-                        <li>Understand that AI-generated images may contain biases</li>
-                    </ul>
-                </div>
-            </div>
+                <div class="task">
+                    <h3>Task 3: Using the Academic Feedback Assistant</h3>
+                    <p><strong>Objective:</strong> To use a "custom" agent that is pre-programmed to format your marking feedback.</p>
+                    <p><strong>Tool:</strong> <strong>Academic Feedback Assistant</strong> (which you added in the first step)</p>
 
-            <div class="task">
-                <span class="task-number">TASK 2</span>
-                <h3>Summarising Texts with NotebookLM</h3>
-                <span class="task-time">⏱️ 25-30 minutes</span>
-                
-                <div class="objective-box">
-                    <p><strong>Objective:</strong> Use "source-grounded" AI to safely summarise documents.</p>
-                    <p><strong>Tool:</strong> NotebookLM (free Google tool)</p>
-                </div>
-
-                <h4>Instructions:</h4>
-                <ol>
-                    <li>Go to <a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a>
-                        <div class="tip-box">
-                            You will need a Google account (free).
-                        </div>
-                    </li>
-                    <li>Click "<strong>+ New notebook</strong>".</li>
-                    <li>Click "<strong>+ Add Source</strong>" and upload a PDF or text file.
-                        <div class="tip-box">
-                            Use teaching materials or ask your facilitator for a sample document.
-                        </div>
-                    </li>
-                    <li>In the chat box at the bottom, type:
-                        <blockquote>
-                            <code>Generate a 5-point summary of this source.</code>
-                        </blockquote>
-                    </li>
-                    <li>Read the summary. <strong>Click on the citation numbers</strong> (e.g., <code>[1]</code>) to see where information came from.
-                        <div class="tip-box">
-                            This is "source-grounded" AI—it only uses your documents and provides citations.
-                        </div>
-                    </li>
-                    <li>Create an audio version:
-                        <blockquote>
-                            <code>Create a 2-minute audio overview of this source, suitable for student revision.</code>
-                        </blockquote>
-                    </li>
-                    <li>Listen to the audio.</li>
-                </ol>
-
-                <div class="reflection-box">
-                    <h4>🤔 Reflection</h4>
-                    <p>NotebookLM <em>only</em> uses your documents. Unlike ChatGPT or Copilot, it will not mix in internet information or "invent" facts.</p>
-                    <p><strong>Why important?</strong> This makes NotebookLM safer for academic work. Students can summarise your materials without risk of false information.</p>
-                </div>
-
-                <div class="success-criteria">
-                    <h4>✓ Success Criteria</h4>
-                    <ul>
-                        <li>Uploaded a document to NotebookLM</li>
-                        <li>Generated a summary with citations</li>
-                        <li>Created and listened to an audio overview</li>
-                        <li>Understand why source-grounded AI is safer</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="task">
-                <span class="task-number">TASK 3</span>
-                <h3>Using the Academic Feedback Assistant</h3>
-                <span class="task-time">⏱️ 20-25 minutes</span>
-                
-                <div class="objective-box">
-                    <p><strong>Objective:</strong> Use a custom agent to format marking feedback.</p>
-                    <p><strong>Tool:</strong> Academic Feedback Assistant</p>
-                </div>
-
-                <h4>Instructions:</h4>
-                <ol>
-                    <li>Return to Copilot.</li>
-                    <li>Select <strong>Academic Feedback Assistant</strong> from the agent menu.</li>
-                    <li>This agent requires five pieces of information. Copy and paste this sample:
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Go back to your main Copilot window.</li>
+                        <li>Select the <strong>Academic Feedback Assistant</strong> from your list of Copilot agents.</li>
+                        <li>This agent is very strict. It <em>needs</em> several pieces of information to work.</li>
+                        <li>Copy the <em>entire block of text</em> below:
 <pre><code>Final Mark: 55%
 Assignment Type: 2000-word critical essay
 Raw Marker Notes: student understands the topic ok. but the argument is weak. needed to use more of the core reading list texts. intro and conclusion are fine but the middle section is all over the place. referencing is not in the right style.
 Marker Email: j.smith@newman.ac.uk
 Marker Office Location: ED-204
 </code></pre>
-                    </li>
-                    <li>Paste into the chat and send.</li>
-                    <li>Observe the formatted output.</li>
-                </ol>
+                        </li>
+                        <li>Paste this entire block into the chat box and press Send.</li>
+                        <li>Observe the output.</li>
+                    </ol>
 
-                <div class="reflection-box">
-                    <h4>🤔 Reflection</h4>
-                    <p>The agent transformed messy notes into structured, professional feedback with institutional links.</p>
-                    <p><strong>This saves time</strong> on formatting whilst you focus on academic judgements.</p>
-                    <p><strong>Important:</strong> The agent does not "know" your discipline. It only formats what <em>you</em> tell it. Academic judgement remains yours.</p>
+                    <h4>Reflection:</h4>
+                    <p>Notice how the agent (which is just Copilot with expert instructions) transformed the messy notes into structured, professional student feedback, complete with the correct institutional links. This can save you time and ensure consistency.</p>
                 </div>
 
-                <div class="tip-box">
-                    In your own marking, replace sample notes with your actual feedback and use your email/office.
+                <div class="task">
+                    <h3>Task 4: Final Reflection (Student Support)</h3>
+                    <p><strong>Objective:</strong> To think about how you will support your students.</p>
+                    <p><strong>Tool:</strong> A pen and paper, or a new Word document.</p>
+                    <p>Please write down your answers to these two questions:</p>
+                    <ol>
+                        <li>Based on what you saw today, what is <strong>one</strong> way a student could <em>productively</em> use a tool like NotebookLM for their studies?</li>
+                        <li>What is <strong>one</strong> piece of advice or one warning you would give that student to ensure they use it <em>responsibly</em>?</li>
+                    </ol>
                 </div>
 
-                <div class="success-criteria">
-                    <h4>✓ Success Criteria</h4>
-                    <ul>
-                        <li>Successfully used the Academic Feedback Assistant</li>
-                        <li>Understand what information the agent requires</li>
-                        <li>See how this tool could save time</li>
-                        <li>Understand the tool formats but does not replace judgements</li>
-                    </ul>
-                </div>
-            </div>
+                <p><strong>Congratulations, you have finished the guided pathway!</strong></p>
 
-            <div class="task">
-                <span class="task-number">TASK 4</span>
-                <h3>Final Reflection: Student Support</h3>
-                <span class="task-time">⏱️ 15-20 minutes</span>
-                
-                <div class="objective-box">
-                    <p><strong>Objective:</strong> Think about supporting students with AI.</p>
-                    <p><strong>Tool:</strong> Pen and paper or Word document</p>
-                </div>
-
-                <p>Write answers to these questions for group discussion:</p>
-
-                <h4>Question 1: Productive Use</h4>
-                <p>What is <strong>one</strong> way students could <em>productively</em> use NotebookLM or Copilot in your discipline?</p>
-                
-                <div class="tip-box">
-                    Think about: summarising readings, generating revision questions, understanding complex concepts, preparing for seminars.
-                </div>
-
-                <h4>Question 2: Responsible Use</h4>
-                <p>What is <strong>one</strong> warning you would give to ensure students use AI <em>responsibly</em>?</p>
-                
-                <div class="tip-box">
-                    Consider: academic integrity, over-reliance, verification, understanding vs. copying, assessment regulations.
-                </div>
-
-                <h4>Question 3: Barriers (Bonus)</h4>
-                <p>What is one barrier to implementing these tools, and how might you overcome it?</p>
-
-                <div class="success-criteria">
-                    <h4>✓ Success Criteria</h4>
-                    <ul>
-                        <li>Written responses to at least two questions</li>
-                        <li>Responses are discipline-specific</li>
-                        <li>Ready to share in group discussion</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="congratulations">
-                <h3>🎉 Congratulations!</h3>
-                <p>You have completed the Novice pathway. You now have hands-on experience with image generation, source-grounded AI, and custom agents.</p>
-                <p><strong>Next:</strong> Join the group discussion to share insights.</p>
-            </div>
-
-            <h2>Optional Extension Activities</h2>
-            <p>If you finish early:</p>
-            
-            <h3>Extension 1: Try Other Agents</h3>
-            <ul>
-                <li><strong>Academic Rigour Assistant:</strong> Ask a complex question ("What is the evidence for labelling theory?"). Then ask about limitations.</li>
-                <li><strong>Socratic Tutor:</strong> Pretend to be confused ("I do not understand actus reus"). Notice how it responds with questions.</li>
-            </ul>
-
-            <h3>Extension 2: Experiment</h3>
-            <ul>
-                <li>Upload different documents to NotebookLM and try varied prompts.</li>
-                <li>Generate images for an upcoming lecture, being specific about inclusivity.</li>
-            </ul>
-
+            </article>
         </main>
 
         <footer>
-            <p><strong>Workshop Materials</strong> | Birmingham Newman University</p>
-            <p>Last updated: November 2025</p>
+            <p>Tony Myers 2025 | Birmingham Newman University</p>
         </footer>
     </div>
+
 </body>
 </html>
