@@ -21,12 +21,18 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: -20px -20px 0 -20px;
+            border-radius: 8px 8px 0 0;
+        }
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
             padding: 2rem 1rem;
-            margin: -20px -20px 20px -20px;
-            border-radius: 8px 8px 0 0;
+            margin: 0 -20px 20px -20px;
             text-align: center;
         }
         header h1 {
@@ -104,6 +110,24 @@
             color: #7f8c8d;
             margin-top: 0;
         }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
         pre {
             background-color: #2c3e50;
             color: #ecf0f1;
@@ -154,8 +178,11 @@
                 margin: 10px;
                 padding: 15px;
             }
+            .banner-image {
+                margin: -15px -15px 0 -15px;
+            }
             header {
-                margin: -15px -15px 20px -15px;
+                margin: 0 -15px 20px -15px;
                 padding: 1.5rem 1rem;
             }
             header h1 {
@@ -175,11 +202,17 @@
                 box-shadow: none;
                 max-width: 100%;
             }
+            .banner-image {
+                display: none;
+            }
             header {
                 background: #2c3e50;
                 color: white;
             }
             nav {
+                display: none;
+            }
+            .video-container {
                 display: none;
             }
         }
@@ -188,6 +221,8 @@
 <body>
 
     <div class="container">
+        <img src="AI_in_HE_banner.png" alt="AI for Education: Shaping the Future of UK HE" class="banner-image">
+        
         <header>
             <h1>Applied AI Training Workshop</h1>
         </header>
@@ -206,6 +241,13 @@
                 
                 <h3>Welcome</h3>
                 <p>Welcome to this hands-on workshop on using Applied AI to support your teaching and learning. The tools available to us are evolving rapidly, and our goal today is to provide a structured, supportive environment for you to gain practical skills and critically evaluate these technologies from the perspective of your specific disciplines.</p>
+
+                <h3>Workshop Introduction Video</h3>
+                <p>Before beginning the workshop activities, please watch this introductory lecture which provides important context for today's session:</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/JBWJ3OSKZVQ?si=ImZCdBwwZKlPYWHZ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
 
                 <h3>Session Goal: A Core Set of Skills for All</h3>
                 <p>Our objective is not to make everyone an AI expert, but to ensure all staff leave with a common baseline of skills. By the end of this session, you will have had hands-on experience with:</p>
